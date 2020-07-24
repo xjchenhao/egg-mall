@@ -37,7 +37,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "initdb":"mongo --quiet mongodb://127.0.0.1:27017/gbdmall ./init.d/mongo/init.js"
   },
   "ci": {
     "version": "10"
