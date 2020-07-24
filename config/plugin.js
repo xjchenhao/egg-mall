@@ -22,4 +22,9 @@ module.exports = {
     enable: true,
     package: 'egg-cors',
   },
+
+  userrole: {
+    enable: true,
+    package: 'egg-userrole',
+  },
 };

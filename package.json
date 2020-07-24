@@ -12,6 +12,7 @@
     "egg-mongoose": "^3.2.0",
     "egg-passport": "^2.1.0",
     "egg-scripts": "^2.11.0",
+    "egg-userrole": "^2.1.0",
     "egg-validate": "^2.0.2",
     "moment": "^2.24.0"
   },
@@ -38,7 +39,7 @@
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
-    "initdb":"mongo --quiet mongodb://127.0.0.1:27017/gbdmall ./init.d/mongo/init.js"
+    "initdb": "mongo --quiet mongodb://127.0.0.1:27017/gbdmall ./init.d/mongo/init.js"
   },
   "ci": {
     "version": "10"

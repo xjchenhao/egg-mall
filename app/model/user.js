@@ -6,6 +6,7 @@ const schema = new mongoose.Schema(
   {
     name: { type: String, unique: true, required: true }, // 登录名
     password: { type: String, required: true }, // 登录密码密文。sha3(pwd+salt)
+    profile: { type: mongoose.SchemaTypes.ObjectId, ref: 'user_profile' }, // 用户资料
 
     // 创建时间。只在首次插入数据的时候写入
     createTime: {

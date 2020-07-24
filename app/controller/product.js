@@ -1,7 +1,7 @@
 'use strict';
 const Controller = require('../core/baseController');
 
-class CardProductController extends Controller {
+class ProductController extends Controller {
   // 产品详情
   async detail() {
     const { ctx } = this;
@@ -45,4 +45,4 @@ class CardProductController extends Controller {
   }
 }
 
-module.exports = CardProductController;
+module.exports = ProductController;
