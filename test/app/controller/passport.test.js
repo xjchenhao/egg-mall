@@ -103,6 +103,23 @@ describe('test/app/controller/passport.test.js', () => {
         });
     });
 
+    it('should return -1', async () => {
+      await app
+        .httpRequest()
+        .post('/api/login')
+        .send({
+          type: 'phone',
+          userName,
+          password: '123',
+        })
+        .expect(200)
+        .expect({
+          code: '-1',
+          msg: '账号或密码错误，请重新再试',
+          data: {},
+        });
+    });
+
     it('should return ok', async () => {
 
       const result = await app
