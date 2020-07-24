@@ -27,7 +27,7 @@ db.user_profiles.insert([
   }
 ]);
 
-db.crm_users.insert([
+db.products.insert([
   {
     name: '我是产品1',
     content: '这是产品1的介绍',
