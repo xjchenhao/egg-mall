@@ -29,6 +29,37 @@ db.user_profiles.insert([
 
 db.crm_users.insert([
   {
+    name: '我是产品1',
+    content: '这是产品1的介绍',
+    quantity: 100,
+    salesVolume: 0,
+    originalPrice: '1000',
+    unifiedPrice: '500',
+    banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
+    state: 1,
+  },{
+    name: '我是产品2',
+    content: '这是产品2的介绍',
+    quantity: 10,
+    salesVolume: 1,
+    originalPrice: '2000',
+    unifiedPrice: '100',
+    banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
+    state: 1,
+  },{
+    name: '我是产品3',
+    content: '这是产品3的介绍',
+    quantity: 10,
+    salesVolume: 1,
+    originalPrice: '3000',
+    unifiedPrice: '100',
+    banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
+    state: 0,
+  }
+]);
+
+db.crm_users.insert([
+  {
     "_id" : ObjectId("5d2ede78c54daec0bf0058fa"),
     "state" : 1,
     "name" : "admin",
