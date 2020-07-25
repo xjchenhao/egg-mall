@@ -1,5 +1,7 @@
 /*eslint-disable*/
 
+db.dropDatabase();
+
 db.users.insert([
   {
     "_id" : ObjectId("5d8ad6e2a9ed49004c33bd48"),
