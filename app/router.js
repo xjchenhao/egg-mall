@@ -16,6 +16,9 @@ module.exports = app => {
   router.post('/api/login', controller.passport.login);
   router.post('/api/logout', controller.passport.logout);
 
+  router.post('/crmApi/login', controller.crm.passport.login);
+  router.post('/crmApi/logout', controller.crm.passport.logout);
+
   /* 产品相关 */
   router.get('/api/product/list', controller.product.list);
   router.get('/api/product/detail', controller.product.detail);
