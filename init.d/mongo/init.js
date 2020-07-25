@@ -33,8 +33,8 @@ db.products.insert([
     content: '这是产品1的介绍',
     quantity: 100,
     salesVolume: 0,
-    originalPrice: '1000',
-    unifiedPrice: '500',
+    originalPrice: 1000,
+    unifiedPrice: 500,
     banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
     state: 1,
   },{
@@ -42,8 +42,8 @@ db.products.insert([
     content: '这是产品2的介绍',
     quantity: 10,
     salesVolume: 1,
-    originalPrice: '2000',
-    unifiedPrice: '100',
+    originalPrice: 2000,
+    unifiedPrice: 100,
     banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
     state: 1,
   },{
@@ -51,8 +51,8 @@ db.products.insert([
     content: '这是产品3的介绍',
     quantity: 10,
     salesVolume: 1,
-    originalPrice: '3000',
-    unifiedPrice: '100',
+    originalPrice: 3000,
+    unifiedPrice: 100,
     banner: [ 'http://assets.shangqutong.cn/app/common/logo.png' ],
     state: 0,
   }

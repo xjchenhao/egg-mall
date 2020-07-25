@@ -20,6 +20,10 @@ module.exports = app => {
   router.get('/api/product/list', controller.product.list);
   router.get('/api/product/detail', controller.product.detail);
 
+  /* 订单相关 */
+  router.post('/api/order/create', userRole, controller.order.create); // 创建订单
+  router.get('/api/order/list', userRole, controller.order.list); // 订单列表
+
   /* 用户资料相关 */
   router.get('/api/user/info', userRole, controller.user.info);
 };

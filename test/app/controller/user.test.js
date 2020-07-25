@@ -1,6 +1,6 @@
 'use strict';
 
-const { app, assert } = require('egg-mock/bootstrap');
+const { app } = require('egg-mock/bootstrap');
 const url = require('url');
 
 const { URLSearchParams } = url;
