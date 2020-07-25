@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   user: { type: mongoose.SchemaTypes.ObjectId, ref: 'user', required: true }, // 关联的用户
-  product: { type: mongoose.SchemaTypes.ObjectId, ref: 'card_product', required: true }, // 关联的产品
+  product: { type: mongoose.SchemaTypes.ObjectId, ref: 'product', required: true }, // 关联的产品
   count: { type: Number, default: 1, min: 1 }, // 下单商品数量
   amount: { type: mongoose.SchemaTypes.Decimal128, min: 0, required: true, get(val) { return Number(val); } }, // 总金额
   // 创建时间

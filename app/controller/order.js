@@ -52,7 +52,7 @@ class OrderController extends Controller {
 
     const result = await ctx.model.Order.find({
       user: userId,
-    });
+    }).populate('product');
 
     this.success({
       list: result,
