@@ -1,5 +1,5 @@
 ## gbd-mall-service
-GBD电商项目的的后端服务工程，给app和crm提供api支持。
+简易的电商demo。
 
 ## 使用技术栈
 * [eggjs](https://eggjs.org/)
