@@ -1,4 +1,4 @@
-## gbd-mall-service
+# mall-service
 简易的电商demo。
 
 ## 使用技术栈
