@@ -96,6 +96,34 @@ describe('test/app/controller/order.test.js', () => {
         });
     });
 
+    it('should return -2', async function() {
+
+      app.mockUserContext({
+        id: userId,
+        type: 'app',
+      });
+
+      // 模拟没有库存的商品
+      await app.model.Product.findByIdAndUpdate(productId1, {
+        $set: {
+          quantity: 0,
+        },
+      });
+
+      await app
+        .httpRequest()
+        .post('/api/order/create')
+        .send({
+          productId: productId1,
+        })
+        .expect(200)
+        .expect({
+          code: '-2',
+          msg: 'sorry，已售罄',
+          data: {},
+        });
+    });
+
     it('should return ok', async function() {
 
       app.mockUserContext({
@@ -116,10 +144,17 @@ describe('test/app/controller/order.test.js', () => {
           data: {},
         });
 
-      const orderData = await app.model.Order.findOne();
+      const [ orderData, productDbData ] = await Promise.all([
+        app.model.Order.findOne(),
+        app.model.Product.findById(productId1),
+      ]);
+
       assert.equal(orderData.product, productId1);
       assert.equal(orderData.user, userId);
       assert.equal(orderData.amount, 500);
+
+      assert.equal(productDbData.salesVolume, product1.salesVolume + 1);
+      assert.equal(productDbData.quantity, product1.quantity - 1);
     });
   });
 
@@ -144,7 +179,7 @@ describe('test/app/controller/order.test.js', () => {
     const orderData = {
       _id: orderId,
       user: userId,
-      product: '5d6484c4c33dd8005bc4ce03',
+      product: productId,
       count: 1,
       amount: 300,
     };

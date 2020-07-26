@@ -33,12 +33,30 @@ class OrderController extends Controller {
       return;
     }
 
+    if (productData.quantity === 0) {
+      this.failure({
+        code: '-2',
+        msg: 'sorry，已售罄',
+        data: {},
+      });
 
-    const result = await ctx.model.Order.create({
-      user: userId,
-      product: productId,
-      amount: productData.unifiedPrice,
-    });
+      return;
+    }
+
+
+    const result = await Promise.all([
+      ctx.model.Order.create({
+        user: userId,
+        product: productId,
+        amount: productData.unifiedPrice,
+      }),
+      ctx.model.Product.findByIdAndUpdate(productId, {
+        $inc: {
+          quantity: -1,
+          salesVolume: 1,
+        },
+      }),
+    ]);
 
     ctx.logger.debug('创建订单结果：', result);
 
