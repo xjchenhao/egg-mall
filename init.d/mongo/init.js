@@ -42,7 +42,7 @@ db.products.insert([
   },{
     name: '我是产品2',
     content: '这是产品2的介绍',
-    quantity: 10,
+    quantity: 1,
     salesVolume: 1,
     originalPrice: 2000,
     unifiedPrice: 100,
